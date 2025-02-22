@@ -1,0 +1,15 @@
+=>npm init --y
+2.npm express
+3.src=>app,index
+=>controller,middleware,utility,route
+
+
+4.client=>fornt end
+
+5.app.js=>
+6.model=>
+7.controller=>
+8.route=>
+9.utility=>
+10.productcontroller=>
+11.productservices=>
