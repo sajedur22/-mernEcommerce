@@ -1,5 +1,5 @@
 
-const {BrandListServise, CategoryListServise, SliderListServise}=require('../services/ProductServices')
+const {BrandListServise, CategoryListServise, SliderListServise, ListByBrandServise, ListByCategoryServise}=require('../services/ProductServices')
 //const BrandModel = require("../models/BrandModel");
 
 
@@ -23,11 +23,14 @@ exports.ProductSliderList=async (req,res)=>{
 }
 
 exports.ProductListByBrand=async (req,res)=>{
+    let result=await ListByBrandServise(req);
+    return res.status(200).json(result);
 
 }
 
 exports.ProductListByCategory=async (req,res)=>{
-
+    let result=await ListByCategoryServise(req);
+    return res.status(200).json(result);
 }
 
 exports.ProductListBySmilier=async (req,res)=>{

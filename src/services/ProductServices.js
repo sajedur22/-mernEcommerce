@@ -1,11 +1,13 @@
 const BrandModel=require("../models/BrandModel")
 const CategoryModel=require("../models/CategoryModel")
 const ProductSliderModel=require("../models/ProductSliderModel")
-//const ProductModel=require("../models/ProductModel")
+const mongoose = require("mongoose");
+
+const ProductModel=require("../models/ProductModel")
 //const ProductDetailModel=require("../models/ProductDetailModel")
 //const ReviewModel=require("../models/ReviewModel")
-//const mongoose=require('mongoose')
-//const ObjectId=mongoose.Types.ObjectId;
+
+const ObjectId=mongoose.Types.ObjectId;
 
 
 const BrandListServise=async ()=>{
@@ -41,13 +43,50 @@ const SliderListServise=async ()=>{
 
 
 
-const ListByBrandServise=async ()=>{
+const ListByBrandServise=async (req)=>{
 
-}
+    try {
+
+        let BrandID=new ObjectId(req.params.BrandID);
+
+        let MatchStage={$match:{brandID:BrandID}}
+
+        let JoinWithBrandStage= {$lookup:{from:"brands",localField:"brandID",foreignField:"_id",as:"brand"}};
+
+
+        let JoinWithCategoryStage={$lookup:{from:"categories",localField:"categoryID",foreignField:"_id",as:"category"}};
+
+        let UnwindBrandStage={$unwind:"$brand"}
+        let UnwindCategoryStage={$unwind:"$category"}
+
+        let ProjectionStage={$project:{'brand._id':0,'category._id':0,'categoryID':0,'brandID':0}}
+
+
+        // Query
+        let data= await  ProductModel.aggregate([
+            MatchStage,
+            JoinWithBrandStage,
+            JoinWithCategoryStage,
+            UnwindBrandStage,
+            UnwindCategoryStage,
+            ProjectionStage
+
+        ])
+        return {status:"success",data:data}
+
+    }catch (e) {
+        return {status:"fail",data:e}.toString()
+    }
+
+
+    }
 
 const ListByCategoryServise=async ()=>{
 
 }
+
+
+
 
 const ListBySmilierServise=async ()=>{
 

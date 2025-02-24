@@ -6,8 +6,10 @@ const router=express.Router();
 router.get("/ProductBrandList",ProductController.ProductBrandList)
 router.get("/ProductCategoryList",ProductController.ProductCategoryList)
 router.get("/ProductSliderList",ProductController.ProductSliderList)
-router.post("/ProductListByBrand/:BrandID",ProductController.ProductListByBrand)
+
+router.get("/ProductListByBrand/:BrandID",ProductController.ProductListByBrand)
 router.get("/ProductListByCategory/:categoryID",ProductController.ProductListByCategory)
+
 router.get("/ProductListBySmilier/:Keyword",ProductController.ProductListBySmilier)
 router.post("/ProductListByKeyword/:Keyword",ProductController.ProductListByKeyword)
 router.post("/ProductListByRemark/:Remark",ProductController.ProductListByRemark)
