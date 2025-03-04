@@ -76,6 +76,7 @@ const ListByBrandServise=async (req)=>{
 
     }catch (e) {
         return {status:"fail",data:e}.toString()
+        
     }
 
 
