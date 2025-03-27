@@ -19,7 +19,6 @@ const BrandListServise=async ()=>{
     }
 
 }
-
 const CategoryListServise=async ()=>{
     try{
         let data=await CategoryModel.find();
@@ -29,8 +28,6 @@ const CategoryListServise=async ()=>{
     }
 
 }
-
-
 const SliderListServise=async ()=>{
     try{
         let data=await ProductSliderModel.find();
@@ -82,23 +79,124 @@ const ListByBrandServise=async (req)=>{
 
     }
 
-const ListByCategoryServise=async ()=>{
+const ListByCategoryServise=async (req)=>{
+    try {
 
+        let CategoryID=new ObjectId(req.params.CategoryID);
+
+        let MatchStage={$match:{
+                categoryID:CategoryID}}
+
+        let JoinWithBrandStage= {$lookup:{from:"brands",localField:"brandID",foreignField:"_id",as:"brand"}};
+
+
+        let JoinWithCategoryStage={$lookup:{from:"categories",localField:"categoryID",foreignField:"_id",as:"category"}};
+
+        let UnwindBrandStage={$unwind:"$brand"}
+        let UnwindCategoryStage={$unwind:"$category"}
+
+        let ProjectionStage={$project:{'brand._id':0,'category._id':0,'categoryID':0,'brandID':0}}
+
+
+        // Query
+        let data= await  ProductModel.aggregate([
+            MatchStage,
+            JoinWithBrandStage,
+            JoinWithCategoryStage,
+            UnwindBrandStage,
+            UnwindCategoryStage,
+            ProjectionStage
+
+        ])
+        return {status:"success",data:data}
+
+    }catch (e) {
+        return {status:"fail",data:e}.toString()
+
+    }
+}
+
+const ListByRemarkServise=async (req)=>{
+    try {
+
+        let Remark=req.params.Remark;
+
+        let MatchStage={$match:{remark:Remark}}
+
+        let JoinWithBrandStage= {$lookup:{from:"brands",localField:"brandID",foreignField:"_id",as:"brand"}};
+
+
+        let JoinWithCategoryStage={$lookup:{from:"categories",localField:"categoryID",foreignField:"_id",as:"category"}};
+
+        let UnwindBrandStage={$unwind:"$brand"}
+        let UnwindCategoryStage={$unwind:"$category"}
+
+        let ProjectionStage={$project:{'brand._id':0,'category._id':0,'categoryID':0,'brandID':0}}
+
+
+        // Query
+        let data= await  ProductModel.aggregate([
+            MatchStage,
+            JoinWithBrandStage,
+            JoinWithCategoryStage,
+            UnwindBrandStage,
+            UnwindCategoryStage,
+            ProjectionStage
+
+        ])
+        return {status:"success",data:data}
+
+    }catch (e) {
+        return {status:"fail",data:e}.toString()
+    }
 }
 
 
 
 
-const ListBySmilierServise=async ()=>{
+const ListBySmilierServise=async (req)=>{
+    try {
 
+        let CategoryID=new ObjectId(req.params.CategoryID);
+
+        let MatchStage={$match:{
+                categoryID:CategoryID}}
+        let limitStage={$limit:20};
+
+        let JoinWithBrandStage= {$lookup:{from:"brands",localField:"brandID",foreignField:"_id",as:"brand"}};
+
+
+        let JoinWithCategoryStage={$lookup:{from:"categories",localField:"categoryID",foreignField:"_id",as:"category"}};
+
+        let UnwindBrandStage={$unwind:"$brand"}
+        let UnwindCategoryStage={$unwind:"$category"}
+
+        let ProjectionStage={$project:{'brand._id':0,'category._id':0,'categoryID':0,'brandID':0}}
+
+
+        // Query
+        let data= await  ProductModel.aggregate([
+            MatchStage,
+            limitStage,
+            JoinWithBrandStage,
+            JoinWithCategoryStage,
+            UnwindBrandStage,
+            UnwindCategoryStage,
+            ProjectionStage
+
+        ])
+        return {status:"success",data:data}
+
+    }catch (e) {
+        return {status:"fail",data:e}.toString()
+
+    }
 }
 
 const ListByKeywordServise=async ()=>{
 
 }
-const ListByRemarkServise=async ()=>{
 
-}
 const DetailsServise=async ()=>{
 
 }
