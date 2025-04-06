@@ -1,5 +1,7 @@
 const express=require('express');
 const ProductController=require("../controller/ProductController")
+const UserController=require("../controller/UserController")
+
 const router=express.Router();
 
 //PRODUCT
@@ -12,10 +14,17 @@ router.get("/ProductListByCategory/:CategoryID",ProductController.ProductListByC
 router.get("/ProductListByRemark/:Remark",ProductController.ProductListByRemark)
 
 router.get("/ProductListBySmilier/:CategoryID",ProductController.ProductListBySmilier)
-router.post("/ProductListByKeyword/:Keyword",ProductController.ProductListByKeyword)
+router.get("/ProductDetails/:ProductID",ProductController.ProductDetails)
+router.get("/ProductListByKeyword/:Keyword",ProductController.ProductListByKeyword)
 
-router.post("/ProductDetails/:productID",ProductController.ProductDetails)
+router.get("/ProductReviewList/:ProductID",ProductController.ProductReviewList)
+
 router.get("/CreateProductReview",ProductController.CreateProductReview)
+
+
+//user
+router.get("/UserOTP/:email",UserController.UserOTP)
+
 
 
 

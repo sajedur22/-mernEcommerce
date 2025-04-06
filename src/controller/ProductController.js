@@ -1,6 +1,7 @@
 
 const {BrandListServise, CategoryListServise, SliderListServise, ListByBrandServise, ListByCategoryServise,
-    ListByRemarkServise, ListBySmilierServise
+    ListByRemarkServise, ListBySmilierServise, DetailsService, ListByKeywordService, ProductReviewServise,
+    ReviewListServise
 }=require('../services/ProductServices')
 //const BrandModel = require("../models/BrandModel");
 
@@ -45,18 +46,21 @@ exports.ProductListBySmilier=async (req,res)=>{
     return res.status(200).json(result);
 
 }
-
-exports.ProductListByKeyword=async (req,res)=>{
-
-}
-
-
-
 exports.ProductDetails=async (req,res)=>{
+    let result=await DetailsService(req);
+    return res.status(200).json(result);
 
 }
+exports.ProductListByKeyword=async (req,res)=>{
+    let result=await ListByKeywordService(req);
+    return res.status(200).json(result);
+
+}
+
 
 exports.ProductReviewList=async (req,res)=>{
+    let result=await ReviewListServise(req);
+    return res.status(200).json(result);
 
 }
 
