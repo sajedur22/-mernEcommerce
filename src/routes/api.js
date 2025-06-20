@@ -24,6 +24,7 @@ router.get("/CreateProductReview",ProductController.CreateProductReview)
 
 //user
 router.get("/UserOTP/:email",UserController.UserOTP)
+router.get("/VerifyLogin/:email/:otp",UserController.VerifyLogin)
 
 
 
