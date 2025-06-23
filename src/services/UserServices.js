@@ -49,9 +49,7 @@ const VerifyOTPServise=async (req)=>{
 }
 
 
-const LogoutService=async (req)=>{
 
-}
 const CreateProfileService=async (req)=>{
 
 }
@@ -65,7 +63,7 @@ const ReadProfileService=async (req)=>{
 module.exports={
     UserOTPService,
     VerifyOTPServise,
-    LogoutService,
+
     CreateProfileService,
     UpdateProfileService,
     ReadProfileService

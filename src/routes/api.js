@@ -1,6 +1,7 @@
 const express=require('express');
 const ProductController=require("../controller/ProductController")
 const UserController=require("../controller/UserController")
+const AuthVerification=require("../middleware/AuthVerification")
 
 const router=express.Router();
 
@@ -25,6 +26,11 @@ router.get("/CreateProductReview",ProductController.CreateProductReview)
 //user
 router.get("/UserOTP/:email",UserController.UserOTP)
 router.get("/VerifyLogin/:email/:otp",UserController.VerifyLogin)
+router.get("/UserLogout",AuthVerification,UserController.UserLogout)
+
+//create&updte profile
+router.post("/CreateProfile",AuthVerification,UserController.CreateProfile)
+router.post("/UpdateProfile",AuthVerification,UserController.UpdateProfile)
 
 
 
