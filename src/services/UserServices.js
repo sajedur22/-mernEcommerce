@@ -63,7 +63,6 @@ const ReadProfileService=async (req)=>{
 module.exports={
     UserOTPService,
     VerifyOTPServise,
-
     CreateProfileService,
     UpdateProfileService,
     ReadProfileService
