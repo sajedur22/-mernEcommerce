@@ -1,4 +1,4 @@
-const {UserOTPService, VerifyOTPServise, CreateProfileService} =require("../services/UserServices")
+const {UserOTPService, VerifyOTPServise, savefileService, ReadProfileService} =require("../services/UserServices")
 
 exports.UserOTP=async (req,res)=>{
     let result=await UserOTPService(req);
@@ -31,13 +31,18 @@ exports.UserLogout=async (req,res)=>{
   return res.status(200).json({status:"success"});
 }
 
+
 exports.CreateProfile=async (req,res)=>{
-    let result=await CreateProfileService(req);
+    let result=await savefileService(req);
     return res.status(200).json(result);
 }
-exports.UpdateProfile=async (req,res)=>{
 
+
+exports.UpdateProfile=async (req,res)=>{
+    let result=await savefileService(req);
+    return res.status(200).json(result);
 }
 exports.ReadProfile=async (req,res)=>{
-
+    let result=await ReadProfileService(req);
+    return res.status(200).json(result);
 }
