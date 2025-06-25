@@ -2,6 +2,8 @@ const express=require('express');
 const ProductController=require("../controller/ProductController")
 const UserController=require("../controller/UserController")
 const WishListController=require("../controller/WishListController")
+const CartListController=require("../controller/CartListController")
+
 const AuthVerification=require("../middleware/AuthVerification")
 
 const router=express.Router();
@@ -37,6 +39,12 @@ router.get("/ReadProfile",AuthVerification,UserController.ReadProfile)
 //wishlist
 router.post("/SaveWishList",AuthVerification,WishListController.SaveWishList)
 router.post("/RemoveWishList",AuthVerification,WishListController.RemoveWishList)
+router.get("/WishList",AuthVerification,WishListController.WishList)
+
+//cart
+router.post("/SaveCartList",AuthVerification,CartListController.SaveCartList)
+router.post("/RemoveCartList",AuthVerification,CartListController.RemoveCartList)
+router.get("/CartList",AuthVerification,CartListController.CartList)
 
 
 
