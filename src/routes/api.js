@@ -3,6 +3,8 @@ const ProductController=require("../controller/ProductController")
 const UserController=require("../controller/UserController")
 const WishListController=require("../controller/WishListController")
 const CartListController=require("../controller/CartListController")
+const InvoiceController=require("../controller/InvoiceController")
+
 
 const AuthVerification=require("../middleware/AuthVerification")
 
@@ -43,8 +45,21 @@ router.get("/WishList",AuthVerification,WishListController.WishList)
 
 //cart
 router.post("/SaveCartList",AuthVerification,CartListController.SaveCartList)
+router.post("/UpdateCartList/:cartID",AuthVerification,CartListController.UpdateCartList)
+
 router.post("/RemoveCartList",AuthVerification,CartListController.RemoveCartList)
 router.get("/CartList",AuthVerification,CartListController.CartList)
+
+//invoice&payment
+router.get("/CreateInvoice",AuthVerification,InvoiceController.CreateInvoice)
+router.get("/InvoiceList",AuthVerification,InvoiceController.InvoiceList)
+router.get("/InvoiceProductList",AuthVerification,InvoiceController.InvoiceProductList)
+
+router.post("/PaymentSuccess",InvoiceController.PaymentSuccess)
+router.post("/PaymentCancel",InvoiceController.PaymentCancel)
+router.post("/PaymentFail",InvoiceController.PaymentFail)
+router.post("/PaymentIPN",InvoiceController.PaymentIPN)
+
 
 
 

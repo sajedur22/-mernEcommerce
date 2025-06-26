@@ -1,4 +1,4 @@
-const {SaveCartListService, RemoveCartListService, CartListService} = require("../services/CartListServices");
+const {SaveCartListService, RemoveCartListService, CartListService, UpdateCartListService} = require("../services/CartListServices");
 
 
 exports.CartList=async (req,res)=>{
@@ -13,5 +13,9 @@ exports.SaveCartList=async (req,res)=>{
 
 exports.RemoveCartList=async (req,res)=>{
     let result=await RemoveCartListService(req);
+    return res.status(200).json(result);
+}
+exports.UpdateCartList=async (req,res)=>{
+    let result=await UpdateCartListService(req);
     return res.status(200).json(result);
 }

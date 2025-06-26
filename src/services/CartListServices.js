@@ -40,8 +40,6 @@ const CartListService=async (req)=>{
     }
 }
 
-
-
 const SaveCartListService=async (req)=>{
     try{
         let user_id=req.headers.user_id;
@@ -69,10 +67,13 @@ const RemoveCartListService=async (req)=>{
 }
 
 
-
-
 const UpdateCartListService=async (req)=>{
     try{
+        let user_id=req.headers.user_id;
+        let cartID=req.params.cartID;
+        let reqBody=req.body;
+
+        await CartModel.updateOne({_id:cartID,userID:user_id},{$set:reqBody});
 
         return{status:"success",message:"cart List Create Succes"};
 
@@ -89,7 +90,5 @@ module.exports={
     UpdateCartListService,
     CartListService,
     RemoveCartListService
-
-
 
 }
