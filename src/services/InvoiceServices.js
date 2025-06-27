@@ -90,34 +90,51 @@ const CreateInvoiceService=async (req)=>{
 
         //Prepare ssl payment====
 
-                return{status:"success",data:invoice_id};
-    }catch (e){
-        return{status:"fail",message:"something went wrong"};
-    }
-}
+        let PaymentSettings=await PaymentSettingModel.find();
+        let form=new FormData();
+        form.append('store_id',PaymentSettings[0]['store_id'])
+        form.append('store_passwd',PaymentSettings[0]['store_passwd'])
+        form.append('total_amount',payable.toString())
+        form.append('currency',PaymentSettings[0]['currency'])
+        form.append('tran_id',tran_id)
+        form.append('success_url',`${PaymentSettings[0]['success_url']}/${tran_id}`)
+        form.append('fail_url',`${PaymentSettings[0]['fail_url']}/${tran_id}`)
+        form.append('cancel_url',`${PaymentSettings[0]['cancel_url']}/${tran_id}`)
+        form.append('ipn_url',`${PaymentSettings[0]['ipn_url']}/${tran_id}`)
 
-const PaymentFailService=async (req)=>{
-    try{
+        form.append('cus_name',Profile[0]['cus_name'])
+        form.append('cus_email',cus_email)
+        form.append('cus_add1',Profile[0]['cus_add'])
+        form.append('cus_add2',PaymentSettings[0]['cus_add'])
+        form.append('cus_city',Profile[0]['cus_city'])
+        form.append('cus_state',PaymentSettings[0]['cus_state'])
+        form.append('cus_postcode',Profile[0]['cus_postcode'])
+        form.append('cus_country',PaymentSettings[0]['cus_country'])
+        form.append('cus_phone',Profile[0]['cus_phone'])
+        form.append('cus_fax',PaymentSettings[0]['cus_phone'])
 
-        return{status:"success",message:"success"};
-    }catch (e){
-        return{status:"fail",message:"something went wrong"};
-    }
-}
+        form.append('shipping_method','YES')
 
-const PaymentCancelService=async (req)=>{
-    try{
+        form.append('num_of_item',Profile[0]['qty'])
+        form.append('ship_name',Profile[0]['ship_name'])
+        form.append('ship_add1',Profile[0]['ship_add'])
+        form.append('ship_add2',Profile[0]['ship_add'])
+        form.append('ship_area',PaymentSettings[0]['ship_add'])
+        form.append('ship_city',Profile[0]['ship_city'])
+        form.append('cus_country',PaymentSettings[0]['cus_country'])
+        form.append('ship_state',Profile[0]['ship_state'])
+        form.append('ship_postcode',PaymentSettings[0]['ship_postcode'])
+        form.append('ship_country',PaymentSettings[0]['ship_country'])
 
-        return{status:"success",message:"success"};
-    }catch (e){
-        return{status:"fail",message:"something went wrong"};
-    }
-}
+        form.append('product_name','According to invoice')
+        form.append('product_category','According to invoice')
+        form.append('product_profile','According to invoice')
+        form.append('product_amount','According to invoice')
 
-const PaymentIPNService=async (req)=>{
-    try{
+        let SSLRes=await axios.post(PaymentSettings[0]['init_url'],form)
 
-        return{status:"success",message:"success"};
+
+        return{status:"success",data:SSLRes.data};
     }catch (e){
         return{status:"fail",message:"something went wrong"};
     }
@@ -125,17 +142,55 @@ const PaymentIPNService=async (req)=>{
 
 const PaymentSuccessService=async (req)=>{
     try{
-
-        return{status:"success",message:"success"};
+        let trxID=req.params.trxID;
+        await InvoiceModel.updateOne({tran_id:trxID},{payment_status:"success"})
+        return{status:"success"};
     }catch (e){
         return{status:"fail",message:"something went wrong"};
     }
 }
 
+const PaymentFailService=async (req)=>{
+    try{
+        let trxID=req.params.trxID;
+        await InvoiceModel.updateOne({tran_id:trxID},{payment_status:"fail"})
+        return{status:"fail"};
+    }catch (e){
+        return{status:"fail",message:"something went wrong"};
+    }
+}
+
+
+
+const PaymentCancelService=async (req)=>{
+    try{
+        let trxID=req.params.trxID;
+        await InvoiceModel.updateOne({tran_id:trxID},{payment_status:"cancel"})
+        return{status:"cancel"};
+    }catch (e){
+        return{status:"fail",message:"something went wrong"};
+    }
+}
+
+const PaymentIPNService=async (req)=>{
+    try{
+        let trxID=req.params.trxID;
+        let status=req.body['status'];
+        await InvoiceModel.updateOne({tran_id:trxID},{payment_status:status})
+        return{status:"success"};
+    }catch (e){
+        return{status:"fail",message:"something went wrong"};
+    }
+}
+
+
+
+
 const InvoiceListService=async (req)=>{
     try{
-
-        return{status:"success",message:"success"};
+        let user_id=req.headers.user_id;
+        let invoice=await InvoiceModel.find({userID:user_id});
+        return{status:"success",data:invoice};
     }catch (e){
         return{status:"fail",message:"something went wrong"};
     }

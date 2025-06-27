@@ -37,3 +37,8 @@ exports.PaymentIPN=async (req,res)=>{
     let result=await PaymentIPNService(req);
     return res.status(200).json(result);
 }
+
+exports.InvoiceList=async (req,res)=>{
+    let result=await InvoiceListService(req);
+    return res.status(200).json(result);
+}

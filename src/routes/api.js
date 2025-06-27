@@ -55,10 +55,11 @@ router.get("/CreateInvoice",AuthVerification,InvoiceController.CreateInvoice)
 router.get("/InvoiceList",AuthVerification,InvoiceController.InvoiceList)
 router.get("/InvoiceProductList",AuthVerification,InvoiceController.InvoiceProductList)
 
-router.post("/PaymentSuccess",InvoiceController.PaymentSuccess)
-router.post("/PaymentCancel",InvoiceController.PaymentCancel)
-router.post("/PaymentFail",InvoiceController.PaymentFail)
-router.post("/PaymentIPN",InvoiceController.PaymentIPN)
+router.post("/PaymentSuccess/:trxID",InvoiceController.PaymentSuccess)
+router.post("/PaymentCancel/:trxID",InvoiceController.PaymentCancel)
+router.post("/PaymentFail/:trxID",InvoiceController.PaymentFail)
+router.post("/PaymentIPN/:trxID",InvoiceController.PaymentIPN)
+router.get("/PaymentIPN/:trxID",InvoiceController.PaymentIPN)
 
 
 
