@@ -280,8 +280,20 @@ const ReviewListServise=async (req)=>{
 
 }
 
-const ProductReviewServise=async ()=>{
-
+const CreateReviewServise=async (req)=>{
+try{
+    let reqBody=req.body;
+    let user_id=req.headers.user_id;
+    let data=await ReviewModel.create({
+        productID:reqBody['productID'],
+        userID:user_id,
+        des:reqBody['des'],
+        rating:reqBody['rating'],
+    })
+    return{status:"success",data:data}
+}catch (e){
+    return{status:"fail",message:"wrong"}
+}
 }
 
 module.exports={
@@ -295,7 +307,7 @@ module.exports={
     ListByRemarkServise,
     DetailsService,
     ReviewListServise,
-    ProductReviewServise
+    CreateReviewServise
 
 }
 
