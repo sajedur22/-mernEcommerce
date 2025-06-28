@@ -1,12 +1,14 @@
-const mongoose=require('mongoose');
-const DataSchema=mongoose.Schema({
+const mongoose = require('mongoose');
 
-        name:{type:"string",required:true},
-        description:{type:"string",required:true},
-        img:{type:"string",required:true},
+const DataSchema = mongoose.Schema({
+    name: { type: String, required: true },
+    description: { type: String, required: true },
+    img: { type: String, required: true }
+}, {
+    timestamps: true,
+    versionKey: false
+});
 
-    },
-    {timestamps:true,versionKey:false});
+const FeaturesModel = mongoose.model('features', DataSchema); // no space in name
 
-const FeaturesModel=mongoose.model(' features',DataSchema)
-module.exports=FeaturesModel;
+module.exports = FeaturesModel;

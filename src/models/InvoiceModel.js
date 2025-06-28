@@ -3,7 +3,7 @@ const DataSchema=mongoose.Schema({
 
         userID:{type:mongoose.Schema.Types.ObjectId,required:true},
         payable:{type:"string",required:true},
-     cus_details:{type:"string",required:true},
+        cus_details:{type:"string",required:true},
         shop_details:{type:"string",required:true},
         train_id:{type:"string",required:true},
         delivary_status:{type:"string",required:true},

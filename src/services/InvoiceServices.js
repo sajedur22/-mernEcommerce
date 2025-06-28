@@ -1,4 +1,4 @@
-const ProductModel=require("../models/ProductModel");
+
 const ProfileModel=require("../models/ProfileModel");
 
 const InvoiceModel=require("../models/InvoiceModel");
@@ -51,7 +51,7 @@ const CreateInvoiceService=async (req)=>{
 
         //st3:Transaction &Others
         let tran_id=Math.floor(10000000+Math.random()*90000000);
-        let val_id=0;
+        //let val_id=0;
         let delivery_status="pending";
         let payment_status="pending";
 
@@ -198,10 +198,22 @@ const InvoiceListService=async (req)=>{
 
 const InvoiceProductListService=async (req)=>{
     try{
+        let user_id=new ObjectID(req.headers.user_id);
+        let invoice_id=new ObjectID(req.params.invoice_id);
+         let matchStage={$match:{userID:user_id,invoiceID:invoice_id}};
+         let JoinStageProduct={$lookup:{from:"products",localField:"productID",foreignField: "_id",as:"product"}};
+         let unwindStage={$unwind: "$product"};
 
-        return{status:"success",message:"success"};
+
+
+
+        let products=await InvoiceProductModel.aggregate([
+            matchStage,JoinStageProduct,unwindStage
+        ])
+
+        return{status:"success",data:products};
     }catch (e){
-        return{status:"fail",message:"something went wrong"};
+        return{status:"fail",message:"something went wrong", error:e.message};
     }
 }
 

@@ -4,6 +4,9 @@ const UserController=require("../controller/UserController")
 const WishListController=require("../controller/WishListController")
 const CartListController=require("../controller/CartListController")
 const InvoiceController=require("../controller/InvoiceController")
+const FeaturesController=require("../controller/FeaturesController")
+
+
 
 
 const AuthVerification=require("../middleware/AuthVerification")
@@ -53,13 +56,17 @@ router.get("/CartList",AuthVerification,CartListController.CartList)
 //invoice&payment
 router.get("/CreateInvoice",AuthVerification,InvoiceController.CreateInvoice)
 router.get("/InvoiceList",AuthVerification,InvoiceController.InvoiceList)
-router.get("/InvoiceProductList",AuthVerification,InvoiceController.InvoiceProductList)
+router.get("/InvoiceProductList/:invoice_id",AuthVerification,InvoiceController.InvoiceProductList)
 
 router.post("/PaymentSuccess/:trxID",InvoiceController.PaymentSuccess)
 router.post("/PaymentCancel/:trxID",InvoiceController.PaymentCancel)
 router.post("/PaymentFail/:trxID",InvoiceController.PaymentFail)
 router.post("/PaymentIPN/:trxID",InvoiceController.PaymentIPN)
-router.get("/PaymentIPN/:trxID",InvoiceController.PaymentIPN)
+
+//features
+router.get("/FeaturesList",FeaturesController.FeaturesList)
+
+
 
 
 
