@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import logo from '../../assets/images/plainb-logo.svg'
-import collapse from "bootstrap/js/src/collapse.js";
+//import collapse from "bootstrap/js/src/collapse.js";
 
 const AppNavBar = () => {
     return (
