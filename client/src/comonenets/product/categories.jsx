@@ -1,11 +1,47 @@
 import React from 'react';
+import CategoriesSkeleton from "../skeleton/categories-skeleton.jsx";
+import ProductStore from "../store/ProductStore.js";
+import Lottie from "lottie-react";
+import animationData from "../../assets/images/image.json";
+import Skeleton from "react-loading-skeleton";
+import {Link} from "react-router-dom";
 
 const Categories = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+    const {CategoryList}=ProductStore();
+
+    if(CategoryList===null){
+        return <CategoriesSkeleton/>
+    }else{
+        return (
+            <div className={'section'}>
+                <div className={'container'}>
+                    <div className={'row'}>
+                        <h1 className={'headline-4 text-center my-2 p-0'}>Top Cetegories</h1>
+                        <span
+                            className={'bodySmal mb-5 text-center'}>Explore a world Choices Across our Most Popular <br/>
+                    Shopping Categories</span>
+                        {
+                            CategoryList.map((item,i) => {
+                                return (
+                                    <div key={i} className={'col-2 col-lg-8r col-sm-8r col-md-8r p-2'}>
+
+                                            <Link to={`/by-category/${item['_id']}`} className={'card h-100 bg-light shadow-lg text-lg-center rounded-3'}>
+                                                <div className={'card-body'}>
+                                                    <img alt={'img'} className={'w-100'} src={item['categoryImg']}/>
+                                                    <p className={'bodySmal mt-3'}>{item['categoryName']}</p>
+                                                </div>
+                                            </Link>
+
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                </div>
+
+            </div>
+        );
+    }
 };
 
 export default Categories;

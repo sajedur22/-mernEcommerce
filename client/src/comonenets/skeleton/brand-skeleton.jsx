@@ -15,7 +15,7 @@ const BrandSkeleton = () => {
                     {
                         Array.from({length: 10}).map(()=>{
                             return (
-                                <div className={'col-3 col-lg-8r col-sm-8r col-md-8r p-2'}>
+                                <div  className={'col-3 col-lg-8r col-sm-8r col-md-8r p-2'}>
                                     <div className={'card h-100 bg-light rounded-3'}>
                                         <div className={'card-body'}>
                                             <Lottie className={'w-75'} animationData={animationData} loop={true}/>
