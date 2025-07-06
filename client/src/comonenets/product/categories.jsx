@@ -27,7 +27,7 @@ const Categories = () => {
 
                                             <Link to={`/by-category/${item['_id']}`} className={'card h-100 bg-light shadow-lg text-lg-center rounded-3'}>
                                                 <div className={'card-body'}>
-                                                    <img alt={'img'} className={'w-100'} src={item['categoryImg']}/>
+                                                    <img alt={'img'} className={'w-75 rounded-3'} src={item['categoryImg']}/>
                                                     <p className={'bodySmal mt-3'}>{item['categoryName']}</p>
                                                 </div>
                                             </Link>

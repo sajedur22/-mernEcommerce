@@ -9,8 +9,5 @@ const FeatureStore=create((set)=>({
             set({FeaturesList:res.data['data']});
         }
     }
-
 }))
-
-
 export default FeatureStore;

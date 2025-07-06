@@ -4,7 +4,7 @@ import Features from "../comonenets/features/features.jsx";
 import Slider from "../comonenets/product/slider.jsx";
 import Brands from "../comonenets/product/brands.jsx";
 import Category from "../comonenets/product/categories.jsx";
-import Product from "../comonenets/product/producs.jsx";
+import Product from "../comonenets/product/product.jsx";
 
 
 
@@ -21,7 +21,7 @@ const HomePage = () => {
             await FeatureListRequest();
             await BrandListRequest();
             await CategpryListRequest();
-            await ListByRemarkRequest('new');
+            await ListByRemarkRequest("new");
 
         })()
     }, []);
@@ -30,8 +30,9 @@ const HomePage = () => {
             <Slider/>
             <Features/>
             <Category/>
-            <Product/>
             <Brands/>
+            <Product/>
+
 
         </Layout>
     );

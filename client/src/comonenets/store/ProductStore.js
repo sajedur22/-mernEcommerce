@@ -31,8 +31,8 @@ const ProductStore=create((set)=>({
 
 
    ListByRemark:null,
-    ListByRemarkRequest:async ()=>{
-        let res=await axios.get('/api/v1/ProductListByRemark');
+    ListByRemarkRequest:async (Remark)=>{
+        let res=await axios.get(`/api/v1/ProductListByRemark/${Remark}`);
         if(res.data['status']==='success'){
             set({ListByRemark:res.data['data']});
         }

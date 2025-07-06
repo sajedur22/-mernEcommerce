@@ -19,6 +19,7 @@
     --darkDeepColor-2: #394150;
     --darkDeepColor-3: #212936;
     --darkDeepColor-4: #0B0A0F;
+    --snuffcolor:#ebe3ef;
 
     /* Typography */
     --headline-1: 52px;
@@ -30,6 +31,7 @@
     --bodyMedium: 16px;
     --bodySmal: 14px;
     --bodyXSmal: 10px;
+
 }
 
 
@@ -64,6 +66,10 @@ body {
     padding: 0;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 14px;
+}
+
+.no-underline {
+    text-decoration: none !important;
 }
 
 .product-img-sm{
@@ -169,7 +175,11 @@ body {
 .hero-bg{
     background: url("../images/hero-bg.svg");
     background-size: cover;
-    min-height: 80vh;
+    min-height: 50vh;
+
+}
+.bg{
+    background-color:var(--snuffcolor)
 }
 
 
