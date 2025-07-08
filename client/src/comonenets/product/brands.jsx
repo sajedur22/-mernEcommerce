@@ -22,9 +22,9 @@ const Brands = () => {
                             return(
                             <div key={i} className={'col-2 col-lg-8r col-md-8r p-2 text-center'}>
                         <Link to={`/by-brand/${item['_id']}`} className={'card h-100 rounded-3 bg-white'}>
-                            <div className={'card-body'}>
+                            <div className={'card-body text-lg-center'}>
                                 <img alt='img' className={'w-100'} src={item['brandImg']}/>
-                                <p className={'bodySmal mt-3'}>{item['brandName']}</p>
+                                <p className={'bodySmal mt-4 text-nowrap text-decoration-none'}>{item['brandName']}</p>
                             </div>
                         </Link>
                     </div>

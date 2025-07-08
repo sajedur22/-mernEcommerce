@@ -4,6 +4,7 @@ import logo from '../../assets/images/plainb-logo.svg'
 //import collapse from "bootstrap/js/src/collapse.js";
 
 const AppNavBar = () => {
+
     return (
         <div>
           <div className={'container-fluid text-white p-2  bg-success'}>
@@ -48,8 +49,9 @@ const AppNavBar = () => {
                     <div className={'d-lg-flex'}>
                         <div className={'input-group'}>
                             <input className={''} type={''} placeholder={'searce'} aria-label='searce'/>
-                            <button className={''}>
-                                <i className="bi bi-search"></i>
+                            <button className={''} >
+                                <Link to={''} className="bi bi-search"></Link>
+
                             </button>
                             <Link to={'/cart'} type={'button'} className={' btn ms-2 btn-light position-relative '}>
                                 <i className="bi text-dark bi-bag"></i>
