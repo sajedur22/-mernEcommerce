@@ -1,9 +1,7 @@
 import React from 'react';
 import CategoriesSkeleton from "../skeleton/categories-skeleton.jsx";
 import ProductStore from "../store/ProductStore.js";
-import Lottie from "lottie-react";
-import animationData from "../../assets/images/image.json";
-import Skeleton from "react-loading-skeleton";
+
 import {Link} from "react-router-dom";
 
 const Categories = () => {

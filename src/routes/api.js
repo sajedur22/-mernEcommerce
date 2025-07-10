@@ -29,6 +29,7 @@ router.get("/ProductListByKeyword/:Keyword",ProductController.ProductListByKeywo
 router.get("/ProductReviewList/:ProductID",ProductController.ProductReviewList)
 
 router.get("/CreateProductReview",ProductController.CreateProductReview)
+router.post("/PorductListByFiltter",ProductController.ProductListByFiltter)
 
 
 //user

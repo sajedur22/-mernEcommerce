@@ -5,13 +5,13 @@ import {useParams} from "react-router-dom";
 import ProductList from "../comonenets/product/product-list.jsx";
 
 const ProductByBrand = () => {
-    const {ListByCategoryRequest}=productStore()
-    const {id}=useParams();
+    const {ListByKeywordRequest}=productStore()
+    const {keyword}=useParams();
     useEffect(() => {
         (async ()=>{
-            await ListByCategoryRequest(id);
+            await ListByKeywordRequest(keyword);
         })()
-    },[id]);
+    },[keyword]);
 
     return (
         <Layout>

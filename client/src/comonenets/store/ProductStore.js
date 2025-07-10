@@ -61,7 +61,34 @@ const ProductStore=create((set)=>({
             set({ListProduct:res.data['data']});
         }
     },
+    SearchKeyword:"",
+    SetSearchKeyword:async (keyword)=>{
+        set({SearchKeyword:keyword})
+    },
+    ListByFilterRequest:async (postBody)=>{
+        set({ListProduct:null})
+        let res=await axios.post(`/api/v1/PorductListByFiltter`,postBody);
+        if(res.data['status']==='success'){
+            set({ListProduct:res.data['data']});
+        }
+    },
+    Details:null,
+    DetailsRequest:async (id)=>{
+        set({Details:null})
+        let res=await axios.get(`/api/v1/ProductDetails/${id}`);
+        if(res.data['status']==='success'){
+            set({Details:res.data['data']});
+        }
+    },
 
+    Review:null,
+    ReviewRequest:async (id)=>{
+        set({Review:null})
+        let res=await axios.get(`/api/v1/ProductReviewList/${id}`);
+        if(res.data['status']==='success'){
+            set({Review:res.data['data']});
+        }
+    },
 }))
 
 

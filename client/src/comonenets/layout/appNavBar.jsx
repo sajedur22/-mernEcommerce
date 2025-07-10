@@ -1,9 +1,11 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import logo from '../../assets/images/plainb-logo.svg'
+import productStore from "../store/ProductStore.js";
 //import collapse from "bootstrap/js/src/collapse.js";
 
 const AppNavBar = () => {
+    const{SearchKeyword,SetSearchKeyword}=productStore()
 
     return (
         <div>
@@ -48,11 +50,13 @@ const AppNavBar = () => {
                     </div>
                     <div className={'d-lg-flex'}>
                         <div className={'input-group'}>
-                            <input className={''} type={''} placeholder={'searce'} aria-label='searce'/>
+
+                                <input className={'form-control'} value={SearchKeyword} onChange={(e)=>SetSearchKeyword(e.target.value)} type={''} placeholder={'searce'} aria-label='searce'/>
                             <button className={''} >
-                                <Link to={''} className="bi bi-search"></Link>
+                                <Link to={SearchKeyword.length>0?`/by-keyword/${SearchKeyword}`:`/`} className="bi bi-search btn btn-outline-danger"></Link>
 
                             </button>
+
                             <Link to={'/cart'} type={'button'} className={' btn ms-2 btn-light position-relative '}>
                                 <i className="bi text-dark bi-bag"></i>
                             </Link>

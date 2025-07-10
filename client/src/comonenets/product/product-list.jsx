@@ -1,29 +1,77 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import ProductsSkeleton from "../skeleton/products-skeleton.jsx";
 import {Link} from "react-router-dom";
 import StarRatings from "react-star-ratings/build/star-ratings.js";
 import productStore from "../store/ProductStore.js";
 
 const ProductList = () => {
-    const {ListProduct,ListByBrandRequest,ListByCategoryRequest}=productStore()
+    const {ListProduct,ListByBrandRequest,BrandList,ListByCategoryRequest,CategoryList,ListByFilterRequest}=productStore()
+
+
+    let[Filter,SetFilter]=useState({
+       brandID:"",
+       categoryID:"",
+       priceMax:"",
+       priceMin:""
+    });
+
+
+    const inputOnchange=async (name,value)=>{
+        SetFilter((data)=>({
+            ...data,
+            [name]:value
+        }))
+    }
+
+
+    useEffect(() => {
+        (async ()=>{
+            BrandList===null?  await ListByBrandRequest():null;
+            CategoryList===null?  await ListByCategoryRequest():null;
+
+            let isEveryFilterPropertyEmpty=Object.values(Filter).every(value => value==="");
+            !isEveryFilterPropertyEmpty?await ListByFilterRequest(Filter):null
+
+        })()
+    }, [Filter]);
+
+
+
     return (
         <div className={'container mt-2'}>
             <div className={'row'}>
                 <div className={'col-md-3 p-2'}>
                     <div className={'card vh-100 p-3 shadow-sm'}>
                         <label className={'form-label mt-3'}>Brand</label>
-                        <select className={'form-control form-select'}>
-                            <option value={''}>Choose Brand</option>
-                        </select>
-                        <label className={'form-label mt-3'}>Cetegory</label>
-                        <select className={'form-control form-select'}>
-                            <option value={''}>Choose Categories</option>
-                        </select>
-                        <label className="form-label mt-3">Maximum Price</label>
-                        <input   min={0} max={1000000} step={1000} type="range" className="form-range"/>
+                        <select value={Filter.brandID} onChange={async (e)=>{await inputOnchange('brandID',e.target.value)}} className={'form-control form-select'}>
+                            <option>Chose Brand</option>
 
-                        <label className="form-label mt-3">Minimum Price </label>
-                        <input  min={0} max={1000000} step={1000} type="range" className="form-range"/>
+                            {
+                                BrandList !== null ? (
+                                    BrandList.map((item, i) => {
+                                        return (<option value={item['_id']}>{item['brandName']}</option>)
+                                    })
+                                ) : <option></option>
+                            }
+                        </select>
+
+                        <label className={'form-label mt-3'}>Cetegory</label>
+                        <select value={Filter.categoryID} onChange={async (e)=>{await inputOnchange('categoryID',e.target.value)}} className={'form-control form-select'}>
+                            <option>Chose Category</option>
+                            {
+                                CategoryList!==null?(
+                                    CategoryList.map((item,i)=>{
+                                        return (<option value={item['_id']}>{item['categoryName']}</option>)
+                                    })
+                                ):<option> </option>
+                            }
+                        </select>
+
+                        <label className="form-label mt-3">Maximum Price ${Filter.priceMax}</label>
+                        <input value={Filter.priceMax} onChange={async (e)=>{await inputOnchange('priceMax',e.target.value)}}   min={0} max={1000000} step={1000} type="range" className="form-range"/>
+
+                        <label  className="form-label mt-3">Minimum Price ${Filter.priceMin} </label>
+                        <input value={Filter.priceMin} onChange={async (e)=>{await inputOnchange('priceMin',e.target.value)}}  min={0} max={1000000} step={1000} type="range" className="form-range"/>
                     </div>
                 </div>
 
