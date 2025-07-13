@@ -5,6 +5,12 @@ import ProductByBrand from "./pages/product-by-brand.jsx";
 import ProductByCategory from "./pages/product-by-category.jsx";
 import ProductByKeyword from "./pages/product-by-keyword.jsx";
 import ProdectByDetails from "./pages/prodect-by-details.jsx";
+import AboutPage from "./pages/about-page.jsx";
+import ComplainPage from "./pages/complain-page.jsx";
+import ContactPage from "./pages/contact-page.jsx";
+import HowtobuyPage from "./pages/howtobuy-page.jsx";
+import RefundPolicyPage from "./pages/refund-policy-page.jsx";
+import TermsPage from "./pages/terms-page.jsx";
 
 const App = () => {
     return (
@@ -15,6 +21,12 @@ const App = () => {
                 <Route path={'/by-category/:id'} element={<ProductByCategory/>}/>
                 <Route path={'/by-keyword/:keyword'} element={<ProductByKeyword/>}/>
                 <Route path={'/details/:id'} element={<ProdectByDetails/>}/>
+                <Route path={'/about'} element={<AboutPage/>}/>
+                <Route path={'/complain'} element={<ComplainPage/>}/>
+                <Route path={'/contact'} element={<ContactPage/>}/>
+                <Route path={'/howtobuy'} element={<HowtobuyPage/>}/>
+                <Route path={'/refund'} element={<RefundPolicyPage/>}/>
+                <Route path={'/terms'} element={<TermsPage/>}/>
 
 
             </Routes>

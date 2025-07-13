@@ -66,6 +66,8 @@ router.post("/PaymentIPN/:trxID",InvoiceController.PaymentIPN)
 
 //features
 router.get("/FeaturesList",FeaturesController.FeaturesList)
+router.get("/LegalsDetails/:type",FeaturesController.LegalDetailsLis)
+
 
 //router.get("/CreateReviewList",AuthVerification,ProductController.CreateReviewList)
 router.post("/CreateReview",AuthVerification,ProductController.CreateReview)

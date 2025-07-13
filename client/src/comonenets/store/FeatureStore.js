@@ -8,6 +8,17 @@ const FeatureStore=create((set)=>({
         if(res.data['status']==='success'){
             set({FeaturesList:res.data['data']});
         }
-    }
+    },
+
+    LegalsList:null,
+    LegalsListRequest:async (type)=>{
+        let res=await axios.get(`/api/v1/LegalsDetails/${type}`);
+        if(res.data['status']==='success'){
+            set({LegalsList:res.data['data']});
+        }
+    },
+
+
+
 }))
 export default FeatureStore;

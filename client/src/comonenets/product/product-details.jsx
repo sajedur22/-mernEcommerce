@@ -3,6 +3,7 @@ import ProductImage from "./productimage.jsx";
 import productStore from "../store/ProductStore.js";
 import ProductDetailsSkeleton from "../skeleton/product-details-skeleton.jsx";
 import parse from "html-react-parser"
+import Review from "./review.jsx";
 
 const ProductDetails = () => {
     const{Details,ReviewRequest}=productStore()
@@ -105,7 +106,11 @@ const ProductDetails = () => {
                             </div>
                             <div className="tab-pane fade" id="Review-tab-pane" role="tabpanel" aria-labelledby="Review-tab"
                                  tabIndex="0">
-                                <ul className="list-group list-group-flush"></ul>
+                                <ul className="list-group list-group-flush">
+                                    <li>
+                                        <Review/>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
