@@ -1,7 +1,7 @@
 import React from 'react';
-import FeatureStore from "../store/FeatureStore.js";
+import FeatureStore from "../../store/FeatureStore.js";
 import parse from "html-react-parser";
-import LegalsSkeleton from "../skeleton/legals-skeleton.jsx";
+import LegalsSkeleton from "../../skeleton/legals-skeleton.jsx";
 
 const Legals = () => {
     const {LegalsList}=FeatureStore();

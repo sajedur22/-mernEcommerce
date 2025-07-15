@@ -1,5 +1,5 @@
 import React from 'react';
-import productStore from "../store/ProductStore.js";
+import productStore from "../../store/ProductStore.js";
 import StarRatings from "react-star-ratings/build/star-ratings.js";
 
 const Review = () => {

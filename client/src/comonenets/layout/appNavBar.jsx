@@ -1,11 +1,13 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import logo from '../../assets/images/plainb-logo.svg'
-import productStore from "../store/ProductStore.js";
+import productStore from "../../store/ProductStore.js";
+import UserStore from "../../store/UserStore.js";
 //import collapse from "bootstrap/js/src/collapse.js";
 
 const AppNavBar = () => {
     const{SearchKeyword,SetSearchKeyword}=productStore()
+    const{isLogin}=UserStore()
 
     return (
         <div>
@@ -38,7 +40,9 @@ const AppNavBar = () => {
                     <Link className={'navbar-brand'} to={'/'}>
                         <img className={'img-fluid'} src={logo} alt={''} width={'95px'}/>
                     </Link>
-                    <button className={'navbar-toggler'} type="button" data-bs-toggle={'collapse'} data-bs-target={"#nav06"} aria-controls={"nav06"} aria-expanded={'false'} aria-label={'Toggle navigation'} >
+                    <button className={'navbar-toggler'} type="button" data-bs-toggle={'collapse'}
+                            data-bs-target={"#nav06"} aria-controls={"nav06"} aria-expanded={'false'}
+                            aria-label={'Toggle navigation'}>
                         <span className={'navbar-toggler-icon'}></span>
                     </button>
                     <div className={'collapse navbar-collapse'} id={'nav06'}>
@@ -51,11 +55,15 @@ const AppNavBar = () => {
                     <div className={'d-lg-flex'}>
                         <div className={'input-group'}>
 
-                                <input className={'form-control'} value={SearchKeyword} onChange={(e)=>SetSearchKeyword(e.target.value)} type={''} placeholder={'searce'} aria-label='searce'/>
-                            <button className={''} >
-                                <Link to={SearchKeyword.length>0?`/by-keyword/${SearchKeyword}`:`/`} className="bi bi-search btn btn-outline-danger"></Link>
+                            <input className={'form-control'} value={SearchKeyword}
+                                   onChange={(e) => SetSearchKeyword(e.target.value)} type={''} placeholder={'searce'}
+                                   aria-label='searce'/>
+                            <button className={''}>
+                                <Link to={SearchKeyword.length > 0 ? `/by-keyword/${SearchKeyword}` : `/`}
+                                      className="bi bi-search btn btn-outline-danger"></Link>
 
                             </button>
+                        </div>
 
                             <Link to={'/cart'} type={'button'} className={' btn ms-2 btn-light position-relative '}>
                                 <i className="bi text-dark bi-bag"></i>
@@ -63,15 +71,29 @@ const AppNavBar = () => {
                             <Link to={'/wish'} type={'button'} className={'btn ms-2 btn-light position-relative'}>
                                 <i className="bi text-dark bi-heart"></i>
                             </Link>
-                            <Link to={'/profile'} type={'button'} className={'rounded-2 btn ms-3 btn-success d-flex'}>
-                                profile
-                            </Link>
-                            <Link to={'/profile'} type={'button'} className={'rounded-2 btn ms-3 btn-success d-flex'}>
-                                logout
-                            </Link>
-                        </div>
+
+                            {
+                                isLogin() ? (
+                                    <>
+                                        <Link to={'/'} type={'button'}
+                                              className={'rounded-2 btn ms-3 btn-success d-flex'}>
+                                            logout
+                                        </Link>
+                                        <Link to={'/'} type={'button'}
+                                              className={'rounded-2 btn ms-3 btn-success d-flex'}>
+                                            profile
+                                        </Link>
+                                    </>
+                                ) : (<Link to={'/'} type={'button'} className={'rounded-2 btn ms-3 btn-success d-flex'}>
+                                    login
+                                </Link>)
+                            }
+
+
+
                     </div>
                 </div>
+
             </nav>
         </div>
     );

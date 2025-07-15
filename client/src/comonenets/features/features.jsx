@@ -1,6 +1,6 @@
 import React from 'react';
-import FeaturesSkeleton from "../skeleton/features-skeleton.jsx";
-import FeatureStore from "../store/FeatureStore.js";
+import FeaturesSkeleton from "../../skeleton/features-skeleton.jsx";
+import FeatureStore from "../../store/FeatureStore.js";
 
 const Features = () => {
 

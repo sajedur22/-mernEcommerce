@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import ProductsSkeleton from "../skeleton/products-skeleton.jsx";
+import ProductsSkeleton from "../../skeleton/products-skeleton.jsx";
 import {Link} from "react-router-dom";
 import StarRatings from "react-star-ratings/build/star-ratings.js";
-import productStore from "../store/ProductStore.js";
+import productStore from "../../store/ProductStore.js";
 
 const ProductList = () => {
     const {ListProduct,ListByBrandRequest,BrandList,ListByCategoryRequest,CategoryList,ListByFilterRequest}=productStore()

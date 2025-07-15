@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import ProductImage from "./productimage.jsx";
-import productStore from "../store/ProductStore.js";
-import ProductDetailsSkeleton from "../skeleton/product-details-skeleton.jsx";
+import productStore from "../../store/ProductStore.js";
+import ProductDetailsSkeleton from "../../skeleton/product-details-skeleton.jsx";
 import parse from "html-react-parser"
 import Review from "./review.jsx";
 

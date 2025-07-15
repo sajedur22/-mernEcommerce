@@ -1,7 +1,7 @@
 import React from 'react';
 import Skeleton from "react-loading-skeleton";
 import Lottie from 'lottie-react';
-import animationData from '../../assets/images/image.json'
+import animationData from '../assets/images/image.json'
 
 const SliderSkeleton = () => {
     return (

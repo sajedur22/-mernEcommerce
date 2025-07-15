@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import StarRatings from "react-star-ratings/build/star-ratings.js"
-import ProductStore from "../store/ProductStore.js";
-import ProductsSkeleton from "../skeleton/products-skeleton.jsx";
+import ProductStore from "../../store/ProductStore.js";
+import ProductsSkeleton from "../../skeleton/products-skeleton.jsx";
 
 
 const Product = () => {

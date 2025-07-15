@@ -1,6 +1,6 @@
 import React from 'react';
-import ProductStore from "../store/ProductStore.js";
-import SliderSkeleton from "../skeleton/slider-skeleton.jsx";
+import ProductStore from "../../store/ProductStore.js";
+import SliderSkeleton from "../../skeleton/slider-skeleton.jsx";
 import {Link} from "react-router-dom";
 
 const Slider = () => {

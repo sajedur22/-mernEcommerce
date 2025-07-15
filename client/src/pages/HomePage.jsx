@@ -10,8 +10,8 @@ import Product from "../comonenets/product/product.jsx";
 
 
 
-import ProductStore from "../comonenets/store/ProductStore.js";
-import FeatureStore from "../comonenets/store/FeatureStore.js";
+import ProductStore from "../store/ProductStore.js";
+import FeatureStore from "../store/FeatureStore.js";
 const HomePage = () => {
     const {BrandListRequest,CategpryListRequest,SliderListRequest,ListByRemarkRequest}=ProductStore();
     const {FeatureListRequest}=FeatureStore();

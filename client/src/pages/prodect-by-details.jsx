@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import Layout from "../comonenets/layout/layout.jsx";
 import Product from "../comonenets/product/product.jsx";
-import productStore from "../comonenets/store/ProductStore.js";
+import productStore from "../store/ProductStore.js";
 import ProductDetails from "../comonenets/product/product-details.jsx";
 import Brands from "../comonenets/product/brands.jsx";
 import {useParams} from "react-router-dom";

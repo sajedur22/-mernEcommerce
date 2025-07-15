@@ -1,6 +1,6 @@
 import React from 'react';
-import ProductStore from "../store/ProductStore.js";
-import BrandSkeleton from "../skeleton/brand-skeleton.jsx";
+import ProductStore from "../../store/ProductStore.js";
+import BrandSkeleton from "../../skeleton/brand-skeleton.jsx";
 import {Link} from "react-router-dom";
 
 const Brands = () => {
@@ -20,11 +20,11 @@ const Brands = () => {
                         {
                             BrandList.map((item,i)=> {
                             return(
-                            <div key={i} className={'col-2 col-lg-8r col-md-8r p-2 text-center'}>
+                            <div key={i} className={'col-md-3 p-2 col-lg-2 col-sm-4 col-4 text-center text-black-500'}>
                         <Link to={`/by-brand/${item['_id']}`} className={'card h-100 rounded-3 bg-white'}>
                             <div className={'card-body text-lg-center'}>
                                 <img alt='img' className={'w-100'} src={item['brandImg']}/>
-                                <p className={'bodySmal mt-4 text-nowrap text-decoration-none'}>{item['brandName']}</p>
+                                <p className={'bodySmal my-1'}>{item['brandName']}</p>
                             </div>
                         </Link>
                     </div>
