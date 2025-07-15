@@ -3,11 +3,20 @@ import {Link} from "react-router-dom";
 import logo from '../../assets/images/plainb-logo.svg'
 import productStore from "../../store/ProductStore.js";
 import UserStore from "../../store/UserStore.js";
-//import collapse from "bootstrap/js/src/collapse.js";
+import Submitbutton from "./submitbutton.jsx";
+import {useNavigate} from "react-router-dom";
 
 const AppNavBar = () => {
+    const navigate=useNavigate()
     const{SearchKeyword,SetSearchKeyword}=productStore()
-    const{isLogin}=UserStore()
+    const{isLogin,UserLogoutRequest}=UserStore()
+
+    const OnLogout=async ()=>{
+        let res=await UserLogoutRequest();
+        sessionStorage.clear();
+        localStorage.clear();
+        navigate("/");
+    }
 
     return (
         <div>
@@ -75,18 +84,12 @@ const AppNavBar = () => {
                             {
                                 isLogin() ? (
                                     <>
-                                        <Link to={'/'} type={'button'}
-                                              className={'rounded-2 btn ms-3 btn-success d-flex'}>
-                                            logout
-                                        </Link>
-                                        <Link to={'/'} type={'button'}
-                                              className={'rounded-2 btn ms-3 btn-success d-flex'}>
-                                            profile
-                                        </Link>
+                                        <Submitbutton text={"Logout"} onClick={OnLogout} className={'rounded-2 btn ms-3 btn-success d-flex'}/>
+
+                                        <Submitbutton text={"Profile"} className={'rounded-2 btn ms-3 btn-success d-flex'}/>
+
                                     </>
-                                ) : (<Link to={'/'} type={'button'} className={'rounded-2 btn ms-3 btn-success d-flex'}>
-                                    login
-                                </Link>)
+                                ) : (<Link type="button" className="btn ms-3 btn-success d-flex" to="/login">Login</Link> )
                             }
 
 

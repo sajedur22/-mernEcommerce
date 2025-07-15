@@ -54,6 +54,13 @@ const UserStore=create((set)=>({
         return  res.data['status']==='success'
 
     },
+    UserLogoutRequest:async ()=>{
+        set({isFormSubmit:true})
+        let res=await axios.get(`/api/v1/UserLogout`);
+        set({isFormSubmit:false})
+        return  res.data['status']==='success'
+
+    },
 
 
 
