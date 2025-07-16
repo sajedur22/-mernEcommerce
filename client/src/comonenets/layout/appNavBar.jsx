@@ -17,6 +17,9 @@ const AppNavBar = () => {
         localStorage.clear();
         navigate("/");
     }
+    const OnProfile=()=>{
+        navigate("/profile")
+    }
 
     return (
         <div>
@@ -86,7 +89,7 @@ const AppNavBar = () => {
                                     <>
                                         <Submitbutton text={"Logout"} onClick={OnLogout} className={'rounded-2 btn ms-3 btn-success d-flex'}/>
 
-                                        <Submitbutton text={"Profile"} className={'rounded-2 btn ms-3 btn-success d-flex'}/>
+                                        <Submitbutton text={"Profile"} onClick={OnProfile} className={'rounded-2 btn ms-3 btn-success d-flex'}/>
 
                                     </>
                                 ) : (<Link type="button" className="btn ms-3 btn-success d-flex" to="/login">Login</Link> )

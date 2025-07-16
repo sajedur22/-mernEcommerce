@@ -13,6 +13,7 @@ import RefundPolicyPage from "./pages/refund-policy-page.jsx";
 import TermsPage from "./pages/terms-page.jsx";
 import LoginPage from "./pages/login-page.jsx";
 import OtpPage from "./pages/otp-page.jsx";
+import ProfilePage from "./pages/profilePage.jsx";
 
 const App = () => {
     return (
@@ -31,6 +32,7 @@ const App = () => {
                 <Route path={'/terms'} element={<TermsPage/>}/>
                 <Route path={'/login'} element={<LoginPage/>}/>
                 <Route path={'/veryfyotp'} element={<OtpPage/>}/>
+                <Route path={'/profile'} element={<ProfilePage/>}/>
 
 
             </Routes>
