@@ -1,5 +1,5 @@
-import React from 'react';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import React, {useEffect} from 'react';
+import {BrowserRouter, Route, Routes, useLocation} from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import ProductByBrand from "./pages/product-by-brand.jsx";
 import ProductByCategory from "./pages/product-by-category.jsx";
@@ -14,10 +14,27 @@ import TermsPage from "./pages/terms-page.jsx";
 import LoginPage from "./pages/login-page.jsx";
 import OtpPage from "./pages/otp-page.jsx";
 import ProfilePage from "./pages/profilePage.jsx";
+import WishlistPage from "./pages/wishlistPage.jsx";
+import CartlistPage from "./pages/cartlistPage.jsx";
+import Orders from "./pages/orders.jsx";
+
+
+
+function ScrollToTopOnNavigation() {
+    const { pathname } = useLocation();
+    useEffect(() => {
+        const scroll = () => {
+            window.scrollTo(0, 0);
+        };
+        requestAnimationFrame(scroll);
+    }, [pathname]);
+    return null;
+}
 
 const App = () => {
     return (
         <BrowserRouter>
+            <ScrollToTopOnNavigation/>
             <Routes>
                 <Route path={'/'} element={<HomePage/>}/>
                 <Route path={'/by-brand/:id'} element={<ProductByBrand/>}/>
@@ -33,6 +50,9 @@ const App = () => {
                 <Route path={'/login'} element={<LoginPage/>}/>
                 <Route path={'/veryfyotp'} element={<OtpPage/>}/>
                 <Route path={'/profile'} element={<ProfilePage/>}/>
+                <Route path={'/wish'} element={<WishlistPage/>}/>
+                <Route path={'/cart'} element={<CartlistPage/>}/>
+                <Route path={'/orders'} element={<Orders/>}/>
 
 
             </Routes>

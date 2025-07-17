@@ -1,5 +1,5 @@
 import React from 'react';
-import Submitbutton from "../layout/submitbutton.jsx";
+import Submitbutton from "./submitbutton.jsx";
 import UserStore from "../../store/UserStore.js";
 import ValidationHelper from "../../utility/ValidationHelper.js";
 import toast from "react-hot-toast";

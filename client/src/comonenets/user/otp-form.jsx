@@ -1,5 +1,5 @@
 import React from 'react';
-import Submitbutton from "../layout/submitbutton.jsx";
+import Submitbutton from "./submitbutton.jsx";
 import UserStore from "../../store/UserStore.js";
 import {useNavigate} from "react-router-dom";
 import ValidationHelper from "../../utility/ValidationHelper.js";
