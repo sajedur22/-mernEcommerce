@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import ProductsSkeleton from "../../skeleton/products-skeleton.jsx";
 import {Link} from "react-router-dom";
-import StarRatings from "react-star-ratings/build/star-ratings.js";
+import StarRatings from 'react-star-ratings';
 import productStore from "../../store/ProductStore.js";
 
 const ProductList = () => {
