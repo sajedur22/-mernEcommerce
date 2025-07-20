@@ -21,7 +21,7 @@ const Categories = () => {
                         {
                             CategoryList.map((item,i) => {
                                 return (
-                                    <div key={i} className={'col-2 col-lg-8r col-sm-8r col-md-8r p-2'}>
+                                    <div key={i} className={'col-6 col-sm-4 col-md-3 col-lg-2 p-2'}>
 
                                             <Link to={`/by-category/${item['_id']}`} className={'card h-100 bg-light shadow-lg text-lg-center rounded-3'}>
                                                 <div className={'card-body'}>

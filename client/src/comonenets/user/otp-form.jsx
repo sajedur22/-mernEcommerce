@@ -14,7 +14,7 @@ const OtpForm = () => {
             toast.error("valid otp Required")
         }else {
             let res= await VeryFyLoginRequest(OtpFormValue.otp);
-            res?navigate("/"):toast.error("something went wrong");
+            res?navigate("/profile"):toast.error("something went wrong");
         }
     }
     return (

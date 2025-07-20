@@ -97,6 +97,16 @@ const CartStore=create((set)=>({
             unauthorized(e.response.status)
 
     }},
+    InvoiceDetails:null,
+    InvoiceDetailsRequest:async(id)=>{
+        try {
+            let res=await axios.get(`/api/v1/InvoiceProductList/${id}`);
+            set({InvoiceDetails:res.data['data']})
+        }catch (e) {
+            unauthorized(e.response.status)
+        }finally {
+        }
+    }
 
 
 }))

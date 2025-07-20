@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ProductStore from "../../store/ProductStore.js";
 import SliderSkeleton from "../../skeleton/slider-skeleton.jsx";
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 const Slider = () => {
     const {SliderList}=ProductStore();
+
+
 
     if(SliderList===null){
         return <SliderSkeleton/>
@@ -34,13 +36,15 @@ const Slider = () => {
                     <div key={i} className={active} data-bs-interval="10000">
                         <div className="container ">
                             <div className="row justify-content-center shadow-sm ">
-                                <div className="col-12 col-lg-5 col-sm-12 col-md-5 p-5">
+                                <div className="col-12 col-md-6 p-4 text-center text-md-start">
                                     <h1 className="headline-1">{item['title']}</h1>
                                     <p>{item['des']}</p>
-                                    <Link to="" className="btn text-white btn-success px-5">Buy Now</Link>
+
                                 </div>
-                                <div className="col-12 col-lg-5 col-sm-12 col-md-5 p-5">
+                                <div className="col-12 col-md-6 p-4 text-center">
                                     <img src={item['image']} className="w-100 rounded-3" alt="img"/>
+
+                                    <Link to={`/details/${item['productID']}`} className={" btn text-white btn-success px-5 m-2"}>Buy Now</Link>
                                 </div>
                             </div>
                         </div>

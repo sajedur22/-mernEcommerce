@@ -21,23 +21,23 @@ exports.InvoiceProductList=async (req,res)=>{
 exports.PaymentSuccess=async (req,res)=>{
     let result=await PaymentSuccessService(req);
 
-    return res.redirect("/orders");
+    return res.redirect("http://localhost:5173/orders");
 }
 
 exports.PaymentCancel=async (req,res)=>{
     let result=await PaymentCancelService(req);
 
-    return res.redirect("/orders");
+    return res.redirect("http://localhost:5173/orders");
 }
 
 exports.PaymentFail=async (req,res)=>{
     let result=await PaymentFailService(req);
 
-    return res.redirect("/orders");
+    return res.redirect("http://localhost:5173/orders");
 }
 
 exports.PaymentIPN=async (req,res)=>{
     let result=await PaymentIPNService(req);
 
-    return res.redirect("/orders");
+    return res.status(200).json(result);
 }

@@ -4,6 +4,7 @@ import cartStore from "../../store/CartStore.js";
 import NoData from "../layout/no-data.jsx";
 import CartSkeleton from "../../skeleton/cart-skeleton.jsx";
 import CartSubmitButton from "./CurtSubmitButton.jsx";
+import toast from "react-hot-toast";
 
 const CartList = () => {
 
@@ -18,6 +19,13 @@ const CartList = () => {
     const remove = async (cartID) => {
         await RemoveCartListRequest(cartID)
         await CartListRequest()
+    }
+
+    const ChackOut=async ()=>{
+        let res=await CreateInvoiceRequest()
+        if(res.status==="fail"){
+           toast.error("Please Compleat Your Profile")
+        }
     }
 
     if(CartList==null){
@@ -70,7 +78,7 @@ const CartList = () => {
                                     </li>
                                     <li className="list-group-item bg-transparent ">
                                             <span className="float-end">
-                                                <CartSubmitButton text="Check Out " onClick={async () => {await CreateInvoiceRequest()}} className="btn px-5 mt-2 btn-success"/>
+                                                <CartSubmitButton text="Check Out " onClick={()=>{ChackOut()}} className="btn px-5 mt-2 btn-success"/>
                                             </span>
                                     </li>
                                 </ul>

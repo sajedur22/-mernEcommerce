@@ -51,6 +51,7 @@ const CreateInvoiceService=async (req)=>{
 
         //st3:Transaction &Others
         let tran_id=Math.floor(10000000+Math.random()*90000000);
+
         //let val_id=0;
         let delivery_status="pending";
         let payment_status="pending";
@@ -136,7 +137,11 @@ const CreateInvoiceService=async (req)=>{
 
         return{status:"success",data:SSLRes.data};
     }catch (e){
-        return{status:"fail",message:"something went wrong"};
+        return {
+            status: "fail",
+            message: e?.message || "Unknown error",
+            error: e?.response?.data || null
+        };
     }
 }
 

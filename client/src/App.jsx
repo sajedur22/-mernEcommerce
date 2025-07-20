@@ -17,6 +17,7 @@ import ProfilePage from "./pages/profilePage.jsx";
 import WishlistPage from "./pages/wishlistPage.jsx";
 import CartlistPage from "./pages/cartlistPage.jsx";
 import Orders from "./pages/orders.jsx";
+import InvoicePage from "./pages/invoicePage.jsx";
 
 
 
@@ -53,6 +54,7 @@ const App = () => {
                 <Route path={'/wish'} element={<WishlistPage/>}/>
                 <Route path={'/cart'} element={<CartlistPage/>}/>
                 <Route path={'/orders'} element={<Orders/>}/>
+                <Route path={'/invoice/:id'} element={<InvoicePage/>}/>
 
 
             </Routes>
