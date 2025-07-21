@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4aa2b57e-0eea-45a6-ba14-d838ce11d747" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/CartStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/CartStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/CartListController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controller/CartListController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/FeaturesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controller/FeaturesController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/InvoiceController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controller/InvoiceController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ProductController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controller/ProductController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controller/UserController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/WishListController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controller/WishListController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware/AuthVerification.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/middleware/AuthVerification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/BrandModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/BrandModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/CartModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/CartModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/CategoryModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/CategoryModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/FeaturesModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/FeaturesModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/InvoiceModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/InvoiceModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/InvoiceProductModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/InvoiceProductModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/LegalModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/LegalModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/PaymentSettingModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/PaymentSettingModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ProductDetailModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/ProductDetailModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ProductModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/ProductModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ProductSliderModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/ProductSliderModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ProfileModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/ProfileModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ReviewModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/ReviewModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/UserModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/UserModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/WishModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/WishModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/CartListServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/CartListServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/FeaturesServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/FeaturesServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/InvoiceServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/InvoiceServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ProductServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/ProductServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/UserServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/UserServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/WishListServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/services/WishListServices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/EmailHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/utility/EmailHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/TokenHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/utility/TokenHelper.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2s4FjHEsMt8alZf54pfxiaY06t2" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Node.js.index.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/javascript/MernEcommerce&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.3.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;GitIgnore&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\javascript\MernEcommerce\client\src\comonenets\wish" />
+      <recent name="D:\javascript\MernEcommerce\client\src\utility" />
+      <recent name="D:\javascript\MernEcommerce\client\public\file" />
+      <recent name="D:\javascript\MernEcommerce\client\src\assets\images" />
+      <recent name="D:\javascript\MernEcommerce\client\public\image" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\javascript\MernEcommerce\backend" />
+      <recent name="D:\javascript\MernEcommerce\client" />
+      <recent name="D:\javascript\MernEcommerce\client\src\comonenets\user" />
+      <recent name="D:\javascript\MernEcommerce\client\src" />
+      <recent name="D:\javascript\MernEcommerce\client\src\assets" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/index.js" working-dir="$PROJECT_DIR$/backend/src">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.index.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4aa2b57e-0eea-45a6-ba14-d838ce11d747" name="Changes" comment="" />
+      <created>1737707073292</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737707073292</updated>
+      <workItem from="1737707074450" duration="13507000" />
+      <workItem from="1737784225099" duration="4669000" />
+      <workItem from="1737835972004" duration="448000" />
+      <workItem from="1737875528899" duration="5070000" />
+      <workItem from="1737913922013" duration="7228000" />
+      <workItem from="1737961050088" duration="8218000" />
+      <workItem from="1738056876470" duration="13121000" />
+      <workItem from="1738134386304" duration="2747000" />
+      <workItem from="1738145797553" duration="3846000" />
+      <workItem from="1738170603854" duration="9222000" />
+      <workItem from="1738223895978" duration="1918000" />
+      <workItem from="1738334007475" duration="1553000" />
+      <workItem from="1738936396744" duration="1470000" />
+      <workItem from="1739207357692" duration="95000" />
+      <workItem from="1740150448655" duration="2750000" />
+      <workItem from="1740209014897" duration="2040000" />
+      <workItem from="1740211796429" duration="17000" />
+      <workItem from="1740211877805" duration="667000" />
+      <workItem from="1740291986624" duration="2216000" />
+      <workItem from="1740339304937" duration="2562000" />
+      <workItem from="1740400411261" duration="2701000" />
+      <workItem from="1740730568918" duration="657000" />
+      <workItem from="1740749851351" duration="1211000" />
+      <workItem from="1742237097804" duration="822000" />
+      <workItem from="1742642641993" duration="3559000" />
+      <workItem from="1742993839510" duration="3918000" />
+      <workItem from="1743084032597" duration="3868000" />
+      <workItem from="1743142518266" duration="5074000" />
+      <workItem from="1743229986827" duration="4181000" />
+      <workItem from="1743235939995" duration="860000" />
+      <workItem from="1743383372633" duration="667000" />
+      <workItem from="1743406251856" duration="782000" />
+      <workItem from="1743701431744" duration="2349000" />
+      <workItem from="1743822750943" duration="10108000" />
+      <workItem from="1743973977228" duration="1179000" />
+      <workItem from="1744132216627" duration="1921000" />
+      <workItem from="1744201412948" duration="3443000" />
+      <workItem from="1744623929500" duration="2459000" />
+      <workItem from="1748233687626" duration="575000" />
+      <workItem from="1748424893015" duration="1260000" />
+      <workItem from="1749126162783" duration="218000" />
+      <workItem from="1749696296488" duration="1683000" />
+      <workItem from="1749742681442" duration="3777000" />
+      <workItem from="1750418871228" duration="5255000" />
+      <workItem from="1750483929667" duration="1671000" />
+      <workItem from="1750508734625" duration="822000" />
+      <workItem from="1750570638403" duration="3721000" />
+      <workItem from="1750617370984" duration="885000" />
+      <workItem from="1750670852152" duration="2820000" />
+      <workItem from="1750692399137" duration="6876000" />
+      <workItem from="1750743589602" duration="1158000" />
+      <workItem from="1750752533686" duration="1846000" />
+      <workItem from="1750760421523" duration="5279000" />
+      <workItem from="1750781653334" duration="5808000" />
+      <workItem from="1750840189861" duration="4723000" />
+      <workItem from="1750872276475" duration="8041000" />
+      <workItem from="1750916773096" duration="7439000" />
+      <workItem from="1750955568480" duration="5832000" />
+      <workItem from="1751012346611" duration="4606000" />
+      <workItem from="1751044265290" duration="88000" />
+      <workItem from="1751052063745" duration="5545000" />
+      <workItem from="1751099701414" duration="10407000" />
+      <workItem from="1751138949603" duration="1421000" />
+      <workItem from="1751181943957" duration="3703000" />
+      <workItem from="1751212176787" duration="4072000" />
+      <workItem from="1751271832207" duration="5825000" />
+      <workItem from="1751358498946" duration="515000" />
+      <workItem from="1751441337359" duration="2198000" />
+      <workItem from="1751456321006" duration="3047000" />
+      <workItem from="1751475828219" duration="2288000" />
+      <workItem from="1751529680773" duration="4381000" />
+      <workItem from="1751562165127" duration="1507000" />
+      <workItem from="1751565136848" duration="3543000" />
+      <workItem from="1751568801979" duration="3214000" />
+      <workItem from="1751607888828" duration="8190000" />
+      <workItem from="1751643607327" duration="14534000" />
+      <workItem from="1751700446257" duration="9921000" />
+      <workItem from="1751729345790" duration="3812000" />
+      <workItem from="1751739258794" duration="3523000" />
+      <workItem from="1751796020023" duration="5164000" />
+      <workItem from="1751812897027" duration="11346000" />
+      <workItem from="1751909501139" duration="5412000" />
+      <workItem from="1751963656548" duration="2658000" />
+      <workItem from="1751971324656" duration="4803000" />
+      <workItem from="1751987259444" duration="2799000" />
+      <workItem from="1752053875860" duration="354000" />
+      <workItem from="1752055313358" duration="1664000" />
+      <workItem from="1752065415605" duration="9968000" />
+      <workItem from="1752137253665" duration="2068000" />
+      <workItem from="1752140858433" duration="991000" />
+      <workItem from="1752168730459" duration="1911000" />
+      <workItem from="1752170805549" duration="641000" />
+      <workItem from="1752172384199" duration="232000" />
+      <workItem from="1752205692213" duration="5121000" />
+      <workItem from="1752216032270" duration="1787000" />
+      <workItem from="1752229177544" duration="819000" />
+      <workItem from="1752239646462" duration="3842000" />
+      <workItem from="1752244377928" duration="1046000" />
+      <workItem from="1752252114014" duration="39000" />
+      <workItem from="1752252222577" duration="1943000" />
+      <workItem from="1752313081435" duration="11107000" />
+      <workItem from="1752387791872" duration="445000" />
+      <workItem from="1752402371295" duration="7254000" />
+      <workItem from="1752433570722" duration="1785000" />
+      <workItem from="1752490044493" duration="329000" />
+      <workItem from="1752491092110" duration="832000" />
+      <workItem from="1752552902640" duration="598000" />
+      <workItem from="1752555930032" duration="6179000" />
+      <workItem from="1752570747906" duration="3215000" />
+      <workItem from="1752592436088" duration="9919000" />
+      <workItem from="1752654404185" duration="6399000" />
+      <workItem from="1752678818973" duration="8964000" />
+      <workItem from="1752728779241" duration="21896000" />
+      <workItem from="1752820164215" duration="8182000" />
+      <workItem from="1752933266146" duration="9152000" />
+      <workItem from="1752949407213" duration="26000" />
+      <workItem from="1753012116057" duration="8557000" />
+      <workItem from="1753027382549" duration="4884000" />
+      <workItem from="1753115239196" duration="464000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/client/src/skeleton/products-skeleton.jsx</url>
+          <line>11</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

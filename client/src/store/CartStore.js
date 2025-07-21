@@ -80,6 +80,7 @@ const CartStore=create((set)=>({
             set({isCartSubmit:true})
             let res=await axios.get(`/api/v1/CreateInvoice`);
             window.location.href=res.data['data']['GatewayPageURL'];
+           console.log('Create Invoice Response',res);
         }catch (e) {
             unauthorized(e.response.status)
         }finally {
