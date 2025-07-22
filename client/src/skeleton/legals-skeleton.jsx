@@ -8,9 +8,9 @@ const FeaturesSkeleton = () => {
     return (
        <div>
                 {
-                    Array.from({length:20}).map(()=>{
+                    Array.from({length:20}).map((__,i)=>{
                         return (
-                            <div className={'col-12 col-md-12 col-sm-12 col-lg-12'}>
+                            <div key={i} className={'col-12 col-md-12 col-sm-12 col-lg-12'}>
                                 <div className={'shadow-sm'}>
                                     <div className={'card-body'}>
                                         <div className={'row'}>

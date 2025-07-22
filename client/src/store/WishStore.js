@@ -1,6 +1,7 @@
 import {create} from "zustand";
 import axios from "axios";
 import {unauthorized} from "../utility/utility.js";
+const baseURL = import.meta.env.VITE_API_BASE_URL;
 
 const WishStore=create((set)=>({
 
@@ -12,7 +13,7 @@ const WishStore=create((set)=>({
         try {
             set({isWishSubmit:true})
 
-            let res=await axios.post(`/api/v1/SaveWishList`, {productID:productID})
+            let res=await axios.post(`${baseURL}/SaveWishList`, {productID:productID})
             return res.data['status']==="success";
         }catch (e){
             unauthorized(e.response.status)
@@ -27,7 +28,7 @@ const WishStore=create((set)=>({
     WishListRequest:async ()=>{
 
         try {
-            let res=await axios.get(`/api/v1/WishList`)
+            let res=await axios.get(`${baseURL}/WishList`)
             set({WishList:res.data['data']})
             set({WishCount:res.data['data'].length})
         }catch (e){
@@ -38,7 +39,7 @@ const WishStore=create((set)=>({
     RemoveListRequest:async (productID)=>{
 
         try {
-            let res=await axios.post(`/api/v1/RemoveWishList`,{productID:productID})
+            let res=await axios.post(`${baseURL}/RemoveWishList`,{productID:productID})
             return res.data['status']==="success";
         }catch (e){
             unauthorized(e.response.status)

@@ -1,4 +1,5 @@
-import React from 'react';
+
+import PropTypes from 'prop-types';
 import CartStore from "../../store/CartStore.js";
 const CartSubmitButton = (props) => {
 
@@ -10,5 +11,10 @@ const CartSubmitButton = (props) => {
             <button disabled={true} className={props.className}><div className="spinner-border spinner-border-sm" role="status"></div>Processing...</button>
         );
     }
+};
+CartSubmitButton.propTypes = {
+    onClick: PropTypes.func.isRequired,
+    className: PropTypes.string,
+    text: PropTypes.string.isRequired,
 };
 export default CartSubmitButton;

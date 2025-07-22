@@ -11,8 +11,8 @@ const CartSkeleton = () => {
                     <div className="card p-4">
                         <ul className="list-group list-group-flush">
                             {
-                                Array.from({length:4}).map((_,i)=>{
-                                    return(<li className="list-group-item d-flex align-items-start">
+                                Array.from({length:4}).map((__,i)=>{
+                                    return(<li key={i} className="list-group-item d-flex align-items-start">
                                             <Lottie style={{width:"100px"}} animationData={ImagePlaceholder} loop={true} />
                                             <div className="p-3">
                                                 <Skeleton count={3} style={{width:"200px"}}/>

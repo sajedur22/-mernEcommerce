@@ -1,7 +1,11 @@
 import {create} from "zustand";
 import axios from "axios";
+axios.defaults.withCredentials = true;
+
+
 import {getEmail, setEmail, unauthorized} from "../utility/utility.js";
 import Cookies from 'js-cookie';
+const baseURL = import.meta.env.VITE_API_BASE_URL;
 
 
 const UserStore=create((set)=>({
@@ -26,7 +30,7 @@ const UserStore=create((set)=>({
 
     UserOTPRequest:async (email)=>{
           set({isFormSubmit:true})
-        let res=await axios.get(`/api/v1/UserOTP/${email}`);
+        let res=await axios.get(`${baseURL}/UserOTP/${email}`);
         setEmail(email);
         set({isFormSubmit:false})
            return  res.data['status']==='success'
@@ -49,14 +53,14 @@ const UserStore=create((set)=>({
     VeryFyLoginRequest:async (otp)=>{
         set({isFormSubmit:true})
         let email=getEmail()
-        let res=await axios.get(`/api/v1/VerifyLogin/${email}/${otp}`);
+        let res=await axios.get(`${baseURL}/VerifyLogin/${email}/${otp}`);
         set({isFormSubmit:false})
         return  res.data['status']==='success'
 
     },
     UserLogoutRequest:async ()=>{
         set({isFormSubmit:true})
-        let res=await axios.get(`/api/v1/UserLogout`);
+        let res=await axios.get(`${baseURL}/UserLogout`);
         set({isFormSubmit:false})
         return  res.data['status']==='success'
 
@@ -80,7 +84,7 @@ const UserStore=create((set)=>({
     ProfileDetails:null,
     ProfileDetailsRequest:async ()=>{
        try{
-           let res=await axios.get(`/api/v1/ReadProfile`);
+           let res=await axios.get(`${baseURL}/ReadProfile`);
            if(res.data['data'].length>0){
                set({ProfileDetails:res.data['data'][0]})
                set({ProfileForm:res.data['data'][0]})
@@ -88,14 +92,14 @@ const UserStore=create((set)=>({
                set({ProfileDetails:[]})
            }
        }catch (e){
-           unauthorized(e.response.status)
+           unauthorized(e?.response?.status || 500);
        }
     },
 
     ProfileSaveRequest:async (PostBody)=>{
         try{
             set({ProfileDetails:null})
-            let res=await axios.post(`/api/v1/UpdateProfile`,PostBody);
+            let res=await axios.post(`${baseURL}/UpdateProfile`,PostBody);
                 return res.data['status']==='success';
 
         }catch (e){

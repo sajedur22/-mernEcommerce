@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import react, {useEffect} from 'react';
 import {BrowserRouter, Route, Routes, useLocation} from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import ProductByBrand from "./pages/product-by-brand.jsx";

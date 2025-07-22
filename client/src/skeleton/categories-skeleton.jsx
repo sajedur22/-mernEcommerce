@@ -13,9 +13,9 @@ const CategoriesSkeleton = () => {
                     <span className={'bodySmal mb-5 text-center'}>Explore a world Choices Across our Most Popular <br/>
                     Shopping Categories</span>
                     {
-                        Array.from({length: 10}).map(()=>{
+                        Array.from({length: 10}).map((__,i)=>{
                             return (
-                                <div className={'col-3 col-lg-8r col-sm-8r col-md-8r p-2'}>
+                                <div key={i} className={'col-3 col-lg-8r col-sm-8r col-md-8r p-2'}>
                                     <div className={'card h-100 bg-light rounded-3'}>
                                         <div className={'card-body'}>
                                             <Lottie className={'w-75'} animationData={animationData} loop={true}/>

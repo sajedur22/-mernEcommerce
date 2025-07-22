@@ -13,9 +13,9 @@ const FeaturesSkeleton = () => {
                         <div className="row">
 
                                 {
-                                    Array.from({length:14}).map(() => {
+                                    Array.from({length:14}).map((__,i) => {
                                         return (
-                                            <div className="col-md-5 ms-1 p-1">
+                                            <div key={i} className="col-md-5 ms-1 p-1">
                                             <Skeleton count={1}/>
                                             </div>
                                         )
