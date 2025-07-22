@@ -5,6 +5,7 @@ import {Link, useParams} from "react-router-dom";
 
 const Slider = () => {
     const {SliderList}=ProductStore();
+    console.log("SliderList from component", SliderList);
 
 
 

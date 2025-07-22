@@ -2,6 +2,7 @@ import {create} from "zustand";
 import axios from "axios";
 import {unauthorized} from "../utility/utility.js";
 const baseURL = import.meta.env.VITE_API_BASE_URL;
+axios.defaults.withCredentials = true;
 
 const WishStore=create((set)=>({
 

@@ -5,26 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4aa2b57e-0eea-45a6-ba14-d838ce11d747" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.env" beforeDir="false" afterPath="$PROJECT_DIR$/client/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/comonenets/cart/CurtSubmitButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/comonenets/cart/CurtSubmitButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/comonenets/user/otp-form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/comonenets/user/otp-form.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/skeleton/brand-skeleton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/skeleton/brand-skeleton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/skeleton/cart-skeleton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/skeleton/cart-skeleton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/skeleton/categories-skeleton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/skeleton/categories-skeleton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/skeleton/features-skeleton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/skeleton/features-skeleton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/skeleton/legals-skeleton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/skeleton/legals-skeleton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/skeleton/product-details-skeleton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/skeleton/product-details-skeleton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/skeleton/products-skeleton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/skeleton/products-skeleton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/comonenets/product/slider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/comonenets/product/slider.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/store/CartStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/CartStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/store/FeatureStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/FeatureStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/store/ProductStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/ProductStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/store/ReviewStore.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/ReviewStore.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/UserStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/UserStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/store/WishStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/WishStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +227,8 @@
       <workItem from="1753115239196" duration="5290000" />
       <workItem from="1753172906673" duration="5352000" />
       <workItem from="1753179982369" duration="935000" />
-      <workItem from="1753180984272" duration="335000" />
+      <workItem from="1753180984272" duration="1765000" />
+      <workItem from="1753196870846" duration="4566000" />
     </task>
     <servers />
   </component>
